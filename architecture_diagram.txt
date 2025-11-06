@@ -1,0 +1,38 @@
+┌──────────────┐                     
+│              │                   
+│  SQL Server  │                    
+│   (RDS)      │                    
+└──────┬───────┘                    
+       │ JDBC
+       │
+       ▼
+┌─────────────────────────┐  
+│  AWS Glue Job (PySpark) │  
+│ - Extract/Transform/Load│  
+│ - Daily Batch Scheduler │  
+└──────────┬──────────────┘  
+           │ S3 (Parquet)
+           ▼
+ ┌────────────────────────────┐
+ │    Amazon S3 (Data Lake)   │
+ │ - Ingested Parquet Files   │
+ └─────────────┬──────────────┘
+               │
+        Glue Crawler
+               │
+               ▼
+    ┌────────────────────┐
+    │ Glue Data Catalog  │
+    └─────────┬──────────┘
+              │
+              ▼
+     ┌───────────────────┐  
+     │  Amazon Athena    │  
+     │  (SQL Analytics)  │  
+     └──────────┬────────┘  
+                │
+                ▼
+   ┌─────────────────────────┐
+   │  Streamlit Dashboard    │
+   │  (Python, local/remote) │
+   └─────────────────────────┘
