@@ -17,7 +17,7 @@ spark.sparkContext.setLogLevel("DEBUG")
 jdbc_url = "jdbc:sqlserver://database-1.c07yme0eefsh.us-east-1.rds.amazonaws.com:1433;databaseName=GlobalPartners"
 jdbc_properties = {
     "user": "admin",
-    "password": "Shashankrao1999",
+    "password": "xxxxxx",
     "driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 }
 
